@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#08356f" />
+  <meta name="color-scheme" content="light" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="BOL Camp 2026" />
+  <meta name="application-name" content="BOL Camp 2026" />
+  <meta name="description" content="BOL Church Family Camp 2026 four-day outline and Add to Home Screen guide." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icon-180.png" />
+  <link rel="icon" sizes="192x192" href="assets/icon-192.png" />
+  <title>BOL Church Camp 2026 — Outline</title>
+  <style>
+    :root{
+      --navy:#08356f;
+      --navy2:#0d4b95;
+      --gold:#d99920;
+      --gold2:#fff4d6;
+      --paper:#fbf7ef;
+      --card:#fffdf8;
+      --ink:#172033;
+      --muted:#647085;
+      --line:#e3d7c4;
+      --blue:#0f5faa;
+      --green:#16815a;
+      --purple:#6e43a9;
+      --orange:#c85f0e;
+      --shadow:0 20px 45px rgba(8,53,111,.13);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 420px at 12% -10%, rgba(217,153,32,.22), transparent 62%),
+        radial-gradient(900px 500px at 100% 0%, rgba(15,95,170,.13), transparent 58%),
+        linear-gradient(180deg,#fffaf1 0%,var(--paper) 45%,#f6efe2 100%);
+      min-height:100vh;
+      line-height:1.55;
+    }
+    .shell{width:min(1060px,calc(100% - 28px));margin:0 auto}
+    .hero{padding:28px 0 20px}
+    .hero-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      padding:30px clamp(20px,5vw,48px);
+      background:linear-gradient(135deg,#062a5b 0%,#0b4d97 68%,#0d71b8 100%);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;inset:auto -120px -165px auto;
+      width:360px;height:360px;border-radius:50%;
+      background:rgba(217,153,32,.22);
+    }
+    .hero-card:after{
+      content:"";
+      position:absolute;inset:-70px auto auto -80px;
+      width:240px;height:240px;border-radius:50%;
+      border:42px solid rgba(255,255,255,.06);
+    }
+    .kicker{position:relative;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;opacity:.86}
+    h1{position:relative;margin:.35rem 0 .15rem;font-size:clamp(2.25rem,8vw,5.2rem);line-height:.9;letter-spacing:-.065em}
+    .theme{position:relative;font-size:clamp(1.05rem,3.2vw,1.55rem);font-weight:750;color:#ffe09b}
+    .meta{position:relative;display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.12);backdrop-filter:blur(10px);padding:8px 12px;border-radius:999px;font-size:.92rem;font-weight:700}
+    .verse{position:relative;margin-top:18px;max-width:760px;color:#eef6ff;font-size:.95rem;border-left:4px solid var(--gold);padding-left:14px}
+    .notice{
+      display:flex;gap:12px;align-items:flex-start;
+      margin:18px 0 0;padding:14px 16px;border-radius:18px;
+      background:rgba(255,244,214,.88);border:1px solid rgba(217,153,32,.45);color:#634913;
+    }
+    .notice strong{display:block;color:#3d2a05;margin-bottom:2px}
+    .notice .icon{font-size:1.35rem;line-height:1}
+    .install-button{
+      display:none;margin-top:12px;border:0;border-radius:999px;background:var(--gold);color:#241902;
+      font-weight:850;padding:12px 18px;box-shadow:0 10px 26px rgba(217,153,32,.28);font:inherit;cursor:pointer;
+    }
+    .install-button.show{display:inline-flex;align-items:center;gap:8px}
+    .section-title{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:28px 0 14px}
+    h2{margin:0;font-size:clamp(1.55rem,4vw,2.15rem);letter-spacing:-.035em;line-height:1.1}
+    .small{color:var(--muted);font-size:.95rem}
+    .outline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .day{
+      background:rgba(255,253,248,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 10px 26px rgba(8,53,111,.08);
+    }
+    .day-head{padding:18px 18px 15px;color:#fff;position:relative;overflow:hidden}
+    .day:nth-child(1) .day-head{background:linear-gradient(135deg,var(--blue),#083c78)}
+    .day:nth-child(2) .day-head{background:linear-gradient(135deg,var(--green),#0d5b42)}
+    .day:nth-child(3) .day-head{background:linear-gradient(135deg,var(--purple),#4f2c84)}
+    .day:nth-child(4) .day-head{background:linear-gradient(135deg,var(--orange),#9f4106)}
+    .day-head:after{content:"";position:absolute;right:-45px;top:-60px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.13)}
+    .day-no{font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;font-weight:900;opacity:.86}
+    .day-date{font-size:1.25rem;font-weight:900;line-height:1.15;margin-top:3px}
+    .day-sub{font-size:.88rem;opacity:.9;margin-top:4px}
+    .events{list-style:none;margin:0;padding:8px 16px 16px}
+    .events li{display:grid;grid-template-columns:88px 1fr;gap:12px;padding:11px 0;border-top:1px solid #eee3d1;align-items:start}
+    .events li:first-child{border-top:0}
+    .time{font-weight:900;color:var(--navy);white-space:nowrap;font-size:.88rem}
+    .event-title{font-weight:760}
+    .worship{display:inline-flex;align-items:center;gap:4px;margin-left:4px;font-size:.72rem;font-weight:900;color:#765211;background:var(--gold2);border:1px solid #e6bc5f;border-radius:999px;padding:2px 8px;vertical-align:1px;white-space:nowrap}
+
+    .notes-section{
+      margin:30px 0 28px;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .notes-head{
+      padding:20px;
+      background:linear-gradient(135deg,#ffffff,#eef6ff);
+      border-bottom:1px solid var(--line);
+    }
+    .notes-head-row{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}
+    .notes-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .note-btn{
+      appearance:none;border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;
+      padding:9px 12px;font:inherit;font-size:.86rem;font-weight:850;cursor:pointer;
+      box-shadow:0 4px 12px rgba(8,53,111,.06);
+    }
+    .note-btn:hover{border-color:#a8bfdc;background:#f7fbff}
+    .note-btn.danger{color:#9b1c1c;border-color:#efc8c8;background:#fffafa}
+    .note-btn.danger:hover{background:#fff0f0}
+    .note-save-status{font-size:.86rem;color:var(--muted);margin-top:8px;min-height:1.3em}
+    .note-help{margin-top:10px;color:#445166;font-size:.94rem;max-width:820px}
+    .note-alert{
+      margin-top:12px;background:var(--gold2);border:1px solid #e6bc5f;color:#634913;border-radius:16px;
+      padding:12px 14px;font-size:.92rem;
+    }
+    .notes-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:16px}
+    .note-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fffefb}
+    .note-card.full{grid-column:1/-1}
+    .note-card-head{
+      display:flex;justify-content:space-between;gap:12px;align-items:center;
+      padding:14px 15px;background:#f7f1e7;border-bottom:1px solid var(--line);
+    }
+    .note-card-title{font-weight:950;color:var(--navy);letter-spacing:-.02em}
+    .note-clear{
+      border:0;background:transparent;color:var(--muted);font:inherit;font-size:.82rem;font-weight:850;cursor:pointer;padding:5px 6px;border-radius:9px;
+    }
+    .note-clear:hover{background:#fff;color:#9b1c1c}
+    .note-fields{padding:14px;display:grid;gap:13px}
+    .note-field label{display:block;font-size:.78rem;font-weight:950;color:#263653;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+    .note-field textarea{
+      width:100%;min-height:108px;resize:vertical;border:1px solid #ddcfbc;border-radius:15px;background:#fff;
+      color:var(--ink);font:inherit;font-size:.96rem;line-height:1.45;padding:12px 13px;outline:none;
+    }
+    .note-field textarea:focus{border-color:var(--navy2);box-shadow:0 0 0 4px rgba(13,75,149,.11)}
+    .note-field textarea::placeholder{color:#9aa3b0}
+
+    .install-guide{margin:28px 0 44px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .guide-head{padding:18px 20px;background:linear-gradient(135deg,#ffffff,#fff4d6);border-bottom:1px solid var(--line)}
+    .guide-head h2{font-size:1.65rem}
+    .guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .guide{padding:20px;border-left:1px solid var(--line)}
+    .guide:first-child{border-left:0}
+    .guide h3{margin:0 0 10px;font-size:1.12rem;color:var(--navy)}
+    .steps{margin:0;padding-left:1.2rem}
+    .steps li{margin:.55rem 0;padding-left:.2rem}
+    .foot{margin-top:14px;color:var(--muted);font-size:.9rem}
+    footer{padding:18px 0 28px;text-align:center;color:var(--muted);font-size:.86rem}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(251,247,239,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(227,215,196,.75)}
+    .topbar .shell{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+    .brand{font-weight:950;color:var(--navy);letter-spacing:-.03em}
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .navlinks a{text-decoration:none;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-weight:800;font-size:.83rem}
+    @media(max-width:780px){
+      .outline,.guide-grid,.notes-grid{grid-template-columns:1fr}
+      .guide{border-left:0;border-top:1px solid var(--line)}
+      .guide:first-child{border-top:0}
+      .section-title{display:block}
+      .small{margin-top:6px}
+      .topbar .shell{align-items:flex-start;flex-direction:column}
+      .navlinks{justify-content:flex-start}
+    }
+    @media(max-width:520px){
+      .shell{width:min(100% - 20px,1060px)}
+      .hero{padding-top:14px}
+      .hero-card{border-radius:24px;padding:24px 18px}
+      .events li{grid-template-columns:78px 1fr;gap:9px}
+      .time{font-size:.82rem}
+      .event-title{font-size:.96rem}
+      .chip{font-size:.83rem;padding:7px 10px}
+    }
+    @media print{
+      .topbar,.install-guide,.notice,.install-button{display:none!important}
+      body{background:#fff;color:#000}
+      .hero-card,.day,.install-guide{box-shadow:none}
+      .outline{grid-template-columns:1fr 1fr;gap:10px}
+      .day{break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Page navigation">
+    <div class="shell">
+      <div class="brand">BOL Church Camp 2026</div>
+      <div class="navlinks">
+        <a href="#outline">Outline</a>
+        <a href="#my-notes">My Notes</a>
+        <a href="#home-screen">Add to Home Screen</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero shell">
+    <div class="hero-card">
+      <div class="kicker">Four-Day Outline</div>
+      <h1>Church Family Camp 2026</h1>
+      <div class="theme">“Our Family Gathering”</div>
+      <div class="meta" aria-label="Camp details">
+        <span class="chip">18–21 June 2026</span>
+        <span class="chip">Hyatt Place Johor Bahru</span>
+        <span class="chip">Paradigm Mall, Malaysia</span>
+      </div>
+      <p class="verse">Year of Restoration · 2 Corinthians 13:11 — “Rejoice. Strive for full restoration… be of one mind, live in peace.”</p>
+    </div>
+
+    <div class="notice">
+      <div class="icon">📱</div>
+      <div>
+        <strong>Use this page like a simple camp app.</strong>
+        Open the hosted page on your phone, then add it to your Home Screen using the instructions below.
+        <button class="install-button" id="installBtn" type="button">Install on this device</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="outline" aria-labelledby="outline-title">
+      <div class="section-title">
+        <div>
+          <h2 id="outline-title">Camp Outline</h2>
+          <div class="small">Key highlights at a glance</div>
+        </div>
+      </div>
+
+      <div class="outline">
+        <article class="day">
+          <div class="day-head">
+            <div class="day-no">Day 1</div>
+            <div class="day-date">Thursday, 18 June</div>
+            <div class="day-sub">Travel · Arrival · Session 1</div>
+          </div>
+          <ul class="events">
+            <li><span class="time">12:30 PM</span><span class="event-title">Gather at Kranji MRT, depart for Johor Bahru</span></li>
+            <li><span class="time">3:00 PM</span><span class="event-title">Arrival &amp; free-and-easy at Paradigm Mall</span></li>
+            <li><span class="time">5:00 PM</span><span class="event-title">Check-in at Hyatt Place</span></li>
+            <li><span class="time">6:00 PM</span><span class="event-title">Dinner at hotel</span></li>
+            <li><span class="time">7:30 PM</span><span class="event-title">Session 1 — Worship by Children <span class="worship">♪ Worship</span></span></li>
+          </ul>
+        </article>
+
+        <article class="day">
+          <div class="day-head">
+            <div class="day-no">Day 2</div>
+            <div class="day-date">Friday, 19 June</div>
+            <div class="day-sub">Starfish Leisure Farm · Worship &amp; Camp Challenge</div>
+          </div>
+          <ul class="events">
+            <li><span class="time">7:30 AM</span><span class="event-title">Breakfast, then bus to Starfish Leisure Farm</span></li>
+            <li><span class="time">9:30 AM</span><span class="event-title">Session 2 — Worship by Fathers + Family Fun Time (FFT) <span class="worship">♪ Worship</span></span></li>
+            <li><span class="time">12:00 PM</span><span class="event-title">Lunch at the farm (provided)</span></li>
+            <li><span class="time">2:00 PM</span><span class="event-title">Outward Bound — ATV</span></li>
+            <li><span class="time">4:30 PM</span><span class="event-title">Wash-up, then return to Paradigm Mall</span></li>
+            <li><span class="time">6:15 PM</span><span class="event-title">Dinner &amp; evening fellowship (cell level)</span></li>
+          </ul>
+        </article>
+
+        <article class="day">
+          <div class="day-head">
+            <div class="day-no">Day 3</div>
+            <div class="day-date">Saturday, 20 June</div>
+            <div class="day-sub">Family Workout · Free Time · Debate Night</div>
+          </div>
+          <ul class="events">
+            <li><span class="time">7:30 AM</span><span class="event-title">Breakfast &amp; morning devotion</span></li>
+            <li><span class="time">9:00 AM</span><span class="event-title">Session 3 — Worship by Youth + Family Workout <span class="worship">♪ Worship</span></span></li>
+            <li><span class="time">12:00 PM</span><span class="event-title">Lunch — free &amp; easy at Paradigm Mall (rest, cell time, shopping)</span></li>
+            <li><span class="time">6:00 PM</span><span class="event-title">Dinner at hotel</span></li>
+            <li><span class="time">7:30 PM</span><span class="event-title">Session 4 — Worship by Mothers + Healthy Conversation <span class="worship">♪ Worship</span></span></li>
+          </ul>
+        </article>
+
+        <article class="day">
+          <div class="day-head">
+            <div class="day-no">Day 4</div>
+            <div class="day-date">Sunday, 21 June</div>
+            <div class="day-sub">Closing · Departure</div>
+          </div>
+          <ul class="events">
+            <li><span class="time">7:30 AM</span><span class="event-title">Breakfast &amp; final packing</span></li>
+            <li><span class="time">9:00 AM</span><span class="event-title">Closing Session — Worship + Family, Cell Activities <span class="worship">♪ Worship</span></span></li>
+            <li><span class="time">10:30 AM</span><span class="event-title">Check-out of Hyatt Place</span></li>
+            <li><span class="time">12:00 PM</span><span class="event-title">Free &amp; easy / dismissal at Paradigm Mall</span></li>
+            <li><span class="time">4:00 PM</span><span class="event-title">Depart for Singapore</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="notes-section" id="my-notes" aria-labelledby="notes-title">
+      <div class="notes-head">
+        <div class="notes-head-row">
+          <div>
+            <h2 id="notes-title">My Notes</h2>
+            <div class="small">Personal reflections saved on this phone only</div>
+          </div>
+          <div class="notes-actions" aria-label="Notes actions">
+            <button class="note-btn" id="copyNotesBtn" type="button">Copy Notes</button>
+            <button class="note-btn" id="downloadNotesBtn" type="button">Download Notes</button>
+            <button class="note-btn danger" id="deleteNotesBtn" type="button">Delete All Notes</button>
+          </div>
+        </div>
+        <div class="note-help">Type directly into the boxes below. Your notes auto-save on this device, so you can find them again by opening the same Home Screen app or the same link on this phone.</div>
+        <div class="note-alert"><strong>Privacy note:</strong> these notes stay inside this phone’s browser/app storage. They do not appear on another device and are not sent to the camp committee.</div>
+        <div class="note-save-status" id="noteStatus" aria-live="polite">Ready for your notes.</div>
+      </div>
+
+      <div class="notes-grid" id="notesGrid">
+        <article class="note-card full" data-note-card="overall">
+          <div class="note-card-head">
+            <div class="note-card-title">Overall Camp Notes</div>
+            <button class="note-clear" type="button" data-clear-card="overall">Clear this section</button>
+          </div>
+          <div class="note-fields">
+            <div class="note-field">
+              <label for="note_overall_reflections">Reflections</label>
+              <textarea id="note_overall_reflections" data-note-key="overall_reflections" placeholder="What is God restoring in me, my family, or my relationships?"></textarea>
+            </div>
+            <div class="note-field">
+              <label for="note_overall_prayer">Prayer / Things to Remember</label>
+              <textarea id="note_overall_prayer" data-note-key="overall_prayer" placeholder="Prayer points, reminders, encouragement, names, or verses to remember."></textarea>
+            </div>
+          </div>
+        </article>
+
+        <article class="note-card" data-note-card="day1">
+          <div class="note-card-head">
+            <div class="note-card-title">Day 1 — Arrival &amp; Session 1</div>
+            <button class="note-clear" type="button" data-clear-card="day1">Clear Day 1</button>
+          </div>
+          <div class="note-fields">
+            <div class="note-field">
+              <label for="note_day1_reflections">Reflections</label>
+              <textarea id="note_day1_reflections" data-note-key="day1_reflections" placeholder="What stood out during arrival, worship, welcome, or the camp anchor?"></textarea>
+            </div>
+            <div class="note-field">
+              <label for="note_day1_response">Response / Action Step</label>
+              <textarea id="note_day1_response" data-note-key="day1_response" placeholder="One thing I want to practise or remember from Day 1."></textarea>
+            </div>
+          </div>
+        </article>
+
+        <article class="note-card" data-note-card="day2">
+          <div class="note-card-head">
+            <div class="note-card-title">Day 2 — Starfish Leisure Farm</div>
+            <button class="note-clear" type="button" data-clear-card="day2">Clear Day 2</button>
+          </div>
+          <div class="note-fields">
+            <div class="note-field">
+              <label for="note_day2_reflections">Reflections</label>
+              <textarea id="note_day2_reflections" data-note-key="day2_reflections" placeholder="What did I learn through worship, Family Fun Time, or shared activities?"></textarea>
+            </div>
+            <div class="note-field">
+              <label for="note_day2_relationships">Relationships / Encouragement</label>
+              <textarea id="note_day2_relationships" data-note-key="day2_relationships" placeholder="Who encouraged me? Who can I encourage or build up?"></textarea>
+            </div>
+          </div>
+        </article>
+
+        <article class="note-card" data-note-card="day3">
+          <div class="note-card-head">
+            <div class="note-card-title">Day 3 — Workout &amp; Healthy Conversation</div>
+            <button class="note-clear" type="button" data-clear-card="day3">Clear Day 3</button>
+          </div>
+          <div class="note-fields">
+            <div class="note-field">
+              <label for="note_day3_reflections">Reflections</label>
+              <textarea id="note_day3_reflections" data-note-key="day3_reflections" placeholder="What did I notice about health, family rhythms, conversations, or listening well?"></textarea>
+            </div>
+            <div class="note-field">
+              <label for="note_day3_commitment">Commitment / Conversation</label>
+              <textarea id="note_day3_commitment" data-note-key="day3_commitment" placeholder="A conversation I want to continue, or a habit I want to restore."></textarea>
+            </div>
+          </div>
+        </article>
+
+        <article class="note-card" data-note-card="day4">
+          <div class="note-card-head">
+            <div class="note-card-title">Day 4 — Closing &amp; Departure</div>
+            <button class="note-clear" type="button" data-clear-card="day4">Clear Day 4</button>
+          </div>
+          <div class="note-fields">
+            <div class="note-field">
+              <label for="note_day4_reflections">Reflections</label>
+              <textarea id="note_day4_reflections" data-note-key="day4_reflections" placeholder="What is my final takeaway from camp?"></textarea>
+            </div>
+            <div class="note-field">
+              <label for="note_day4_nextsteps">Next Steps / Family Commitment</label>
+              <textarea id="note_day4_nextsteps" data-note-key="day4_nextsteps" placeholder="What will I do after camp? What commitment should I bring home?"></textarea>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="install-guide" id="home-screen" aria-labelledby="install-title">
+      <div class="guide-head">
+        <h2 id="install-title">Add to Home Screen</h2>
+        <div class="small">Share the hosted page link, then campers can save it like an app on their phones.</div>
+      </div>
+      <div class="guide-grid">
+        <div class="guide">
+          <h3>iPhone / iPad</h3>
+          <ol class="steps">
+            <li>Open this page in <strong>Safari</strong>.</li>
+            <li>Tap the <strong>Share</strong> button.</li>
+            <li>Tap <strong>Add to Home Screen</strong>.</li>
+            <li>If shown, turn on <strong>Open as Web App</strong>, then tap <strong>Add</strong>.</li>
+          </ol>
+        </div>
+        <div class="guide">
+          <h3>Android</h3>
+          <ol class="steps">
+            <li>Open this page in <strong>Chrome</strong>.</li>
+            <li>Tap the <strong>three-dot menu</strong>.</li>
+            <li>Tap <strong>Add to Home screen</strong> or <strong>Install app</strong>.</li>
+            <li>Tap <strong>Install</strong>, <strong>Create shortcut</strong>, or <strong>Add</strong> when prompted.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="guide" style="border-top:1px solid var(--line);border-left:0">
+        <strong>Note:</strong> For the best Home Screen experience, upload the files to a web host and open the page using an <strong>https://</strong> link. Opening the file directly from WhatsApp or Files may show it as a normal webpage instead of a Home Screen app.
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    BOL Church Family Camp 2026 · Four-Day Outline
+  </footer>
+
+  <script>
+
+    const NOTES_STORAGE_PREFIX = 'bolChurchCamp2026.notes.';
+    const noteTextareas = Array.from(document.querySelectorAll('[data-note-key]'));
+    const noteStatus = document.getElementById('noteStatus');
+
+    function notesStorageKey(key) {
+      return NOTES_STORAGE_PREFIX + key;
+    }
+
+    function setNoteStatus(message) {
+      if (!noteStatus) return;
+      noteStatus.textContent = message;
+    }
+
+    function loadNotes() {
+      noteTextareas.forEach((textarea) => {
+        try {
+          textarea.value = localStorage.getItem(notesStorageKey(textarea.dataset.noteKey)) || '';
+        } catch (error) {
+          setNoteStatus('Notes could not be loaded because browser storage is unavailable.');
+        }
+      });
+    }
+
+    let noteSaveTimer;
+    function saveNote(textarea) {
+      try {
+        localStorage.setItem(notesStorageKey(textarea.dataset.noteKey), textarea.value);
+        setNoteStatus('Saving…');
+        clearTimeout(noteSaveTimer);
+        noteSaveTimer = setTimeout(() => setNoteStatus('Saved on this phone.'), 350);
+      } catch (error) {
+        setNoteStatus('Notes could not be saved. Your browser storage may be full or disabled.');
+      }
+    }
+
+    function makeNotesText() {
+      const sections = [
+        ['Overall Camp Notes', [
+          ['Reflections', 'overall_reflections'],
+          ['Prayer / Things to Remember', 'overall_prayer']
+        ]],
+        ['Day 1 — Arrival & Session 1', [
+          ['Reflections', 'day1_reflections'],
+          ['Response / Action Step', 'day1_response']
+        ]],
+        ['Day 2 — Starfish Leisure Farm', [
+          ['Reflections', 'day2_reflections'],
+          ['Relationships / Encouragement', 'day2_relationships']
+        ]],
+        ['Day 3 — Workout & Healthy Conversation', [
+          ['Reflections', 'day3_reflections'],
+          ['Commitment / Conversation', 'day3_commitment']
+        ]],
+        ['Day 4 — Closing & Departure', [
+          ['Reflections', 'day4_reflections'],
+          ['Next Steps / Family Commitment', 'day4_nextsteps']
+        ]]
+      ];
+
+      return sections.map(([title, fields]) => {
+        const body = fields.map(([label, key]) => {
+          const textarea = document.querySelector(`[data-note-key="${key}"]`);
+          const value = textarea?.value.trim() || '';
+          return `${label}:\n${value || '(blank)'}`;
+        }).join('\n\n');
+        return `${title}\n${'-'.repeat(title.length)}\n${body}`;
+      }).join('\n\n');
+    }
+
+    noteTextareas.forEach((textarea) => {
+      textarea.addEventListener('input', () => saveNote(textarea));
+    });
+
+    document.querySelectorAll('[data-clear-card]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const cardName = button.dataset.clearCard;
+        const card = document.querySelector(`[data-note-card="${cardName}"]`);
+        if (!card) return;
+        const title = card.querySelector('.note-card-title')?.textContent || 'this section';
+        if (!confirm(`Clear notes for ${title}? This only deletes notes from this phone.`)) return;
+        card.querySelectorAll('[data-note-key]').forEach((textarea) => {
+          textarea.value = '';
+          localStorage.removeItem(notesStorageKey(textarea.dataset.noteKey));
+        });
+        setNoteStatus(`${title} notes cleared from this phone.`);
+      });
+    });
+
+    document.getElementById('deleteNotesBtn')?.addEventListener('click', () => {
+      if (!confirm('Delete all My Notes from this phone? This cannot be undone and will not affect anyone else.')) return;
+      noteTextareas.forEach((textarea) => {
+        textarea.value = '';
+        localStorage.removeItem(notesStorageKey(textarea.dataset.noteKey));
+      });
+      setNoteStatus('All notes deleted from this phone.');
+    });
+
+    document.getElementById('copyNotesBtn')?.addEventListener('click', async () => {
+      const text = makeNotesText();
+      try {
+        await navigator.clipboard.writeText(text);
+        setNoteStatus('Notes copied. You can paste them into Notes, WhatsApp, or another app.');
+      } catch (error) {
+        setNoteStatus('Copy did not work on this browser. Select and copy the notes manually, or use Download Notes.');
+      }
+    });
+
+    document.getElementById('downloadNotesBtn')?.addEventListener('click', () => {
+      const blob = new Blob([makeNotesText()], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'BOL_Church_Camp_2026_My_Notes.txt';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      setNoteStatus('Notes downloaded as a text file.');
+    });
+
+    loadNotes();
+
+    let deferredInstallPrompt;
+    const installBtn = document.getElementById('installBtn');
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      deferredInstallPrompt = event;
+      installBtn.classList.add('show');
+    });
+
+    installBtn?.addEventListener('click', async () => {
+      if (!deferredInstallPrompt) return;
+      deferredInstallPrompt.prompt();
+      await deferredInstallPrompt.userChoice;
+      deferredInstallPrompt = null;
+      installBtn.classList.remove('show');
+    });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
